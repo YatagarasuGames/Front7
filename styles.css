@@ -1,0 +1,216 @@
+:root {
+  --primary-color: #ff0000;
+  --secondary-color: #000000;
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --card-color: #1e1e1e;
+  --accent-color: #ff3333;
+  --danger-color: #cc0000;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h1 {
+  color: var(--primary-color);
+  text-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
+  margin-bottom: 10px;
+}
+
+#offline-status {
+  display: none;
+  background-color: var(--danger-color);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  margin: 0 auto;
+  width: fit-content;
+  box-shadow: 0 2px 5px rgba(255, 0, 0, 0.3);
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+#note-input {
+  width: 100%;
+  min-height: 100px;
+  padding: 15px;
+  background-color: var(--card-color);
+  color: var(--text-color);
+  border: 2px solid var(--primary-color);
+  border-radius: 8px;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+#note-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.2);
+}
+
+#add-button {
+  padding: 12px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+#add-button:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+.notes-list {
+  display: grid;
+  gap: 15px;
+}
+
+.note-item {
+  background-color: var(--card-color);
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-color);
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.note-item:hover {
+  transform: translateX(5px);
+}
+
+.note-text {
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  padding-right: 30px;
+  cursor: pointer;
+}
+
+.note-date {
+  font-size: 12px;
+  color: #aaaaaa;
+  margin-bottom: 15px;
+}
+
+.delete-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  color: var(--danger-color);
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.delete-button:hover {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+.note-item.editing {
+  border-left: 4px solid var(--accent-color);
+  background-color: rgba(255, 0, 0, 0.05);
+}
+
+.edit-textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 10px;
+  background-color: var(--card-color);
+  color: var(--text-color);
+  border: 2px solid var(--accent-color);
+  border-radius: 6px;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.edit-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.save-button {
+  padding: 8px 15px;
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.save-button:hover {
+  background-color: #ff5555;
+}
+
+.cancel-button {
+  padding: 8px 15px;
+  background-color: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.cancel-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+  
+  .note-item {
+    padding: 15px;
+  }
+}

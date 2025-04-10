@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Заметки</title>
+  <meta name="theme-color" content="#121212">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Заметки</h1>
+      <div id="offline-status">Офлайн-режим</div>
+    </header>
+    
+    <main>
+      <div class="input-container">
+        <textarea id="note-input" placeholder="Введите заметку..."></textarea>
+        <button id="add-button">Добавить</button>
+      </div>
+      
+      <div id="notes-list" class="notes-list"></div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+  
+  <style>
+    @media screen and (max-width: 600px) {
+      textarea {
+        font-size: 16px !important;
+      }
+    }
+  </style>
+</body>
+</html>
